@@ -77,9 +77,20 @@ from sklearn.metrics import accuracy_score
       print('The person does not have a Heart Disease')
   else:
       print('The persom has heart Disease')
+     
+
+# testing the models with 2 example(above is for defective heart case and the below one ia for healthy heart case
 
 
-
+.  input_data = (62,0,0,140,268,0,0,160,0,3.6,0,2,2)
+   input_data_as_numpy_array = np.array(input_data)      #change the input data to a numpy array
+   input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)    #reshape the numpy array as we are predicting for only one instance
+   prediction = model.predict(input_data_reshaped)
+   print(prediction)
+  if(prediction[0] == 0):
+    print('The person does not have a Heart Disease')
+  else:
+    print('The persom has heart Disease')
 
 
 
